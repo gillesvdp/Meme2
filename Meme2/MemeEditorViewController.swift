@@ -66,7 +66,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     // TextField methods
-    
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
@@ -75,7 +74,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         textField.resignFirstResponder()
         return true
     }
-    
     
     // Keyboard functions
     func keyboardWillShow(notification: NSNotification) {
@@ -123,7 +121,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         appDelegate.memes.append(meme)
     }
     
-    
     func generateMemedImage() -> UIImage {
         // Hide tool bar and navbar
         self.navigationController?.navigationBarHidden = true
@@ -143,7 +140,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         return memedImage
     }
 
-    
     override func viewWillAppear(animated: Bool) {
         cameraButtonOutlet.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
@@ -172,11 +168,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

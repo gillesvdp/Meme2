@@ -13,25 +13,22 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    
     private let reuseIdentifier = "cell"
 
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
+    override func viewWillAppear(animated: Bool) {
+        collectionView?.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let space: CGFloat = 3.0
         let dimension = (self.view.frame.size.width - (2 * space)) / 2.0
-        
         flowLayout.minimumInteritemSpacing = space
         flowLayout.itemSize = CGSizeMake(dimension, dimension * 2)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -44,9 +41,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MemeCollectionCell
-    
         cell.memeImage.image = memes[indexPath.row].finalImage
-        
         return cell
     }
 
@@ -58,10 +53,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
         if segue.identifier == "viewDetails" {
             let destinationVC = segue.destinationViewController as! DetailsViewController
             let indexPath = collectionView?.indexPathsForSelectedItems()!
-            let selectedRow = indexPath![0].row
+            let selectedRow = indexPath![0].row //Will show the first item selected only in the detail view controller.
             destinationVC.meme = self.memes[selectedRow]
         }
     }
-    
-    
 }
