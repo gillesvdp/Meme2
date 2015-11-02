@@ -145,7 +145,7 @@
                                                 <constraint firstAttribute="height" constant="150" id="gWv-CW-IvM"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xY5-W8-sW9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xY5-W8-sW9">
                                             <rect key="frame" x="166" y="72" width="42" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -157,6 +157,7 @@
                                     <constraints>
                                         <constraint firstItem="Egy-0Z-QF0" firstAttribute="top" secondItem="xKH-I0-F39" secondAttribute="topMargin" id="4OZ-6a-xYD"/>
                                         <constraint firstItem="xY5-W8-sW9" firstAttribute="leading" secondItem="Egy-0Z-QF0" secondAttribute="trailing" constant="8" id="5JH-Kt-Fyc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xY5-W8-sW9" secondAttribute="trailing" id="HHk-OH-IRt"/>
                                         <constraint firstItem="Egy-0Z-QF0" firstAttribute="leading" secondItem="xKH-I0-F39" secondAttribute="leadingMargin" id="Xg6-rN-6oU"/>
                                         <constraint firstItem="xY5-W8-sW9" firstAttribute="centerY" secondItem="xKH-I0-F39" secondAttribute="centerY" id="hA1-B1-VVJ"/>
                                         <constraint firstItem="xY5-W8-sW9" firstAttribute="centerY" secondItem="xKH-I0-F39" secondAttribute="centerY" id="qhL-zg-iUS"/>
@@ -311,6 +312,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JGN-FR-Rin"/>
+        <segue reference="ahh-QI-zcH"/>
     </inferredMetricsTieBreakers>
 </document>
