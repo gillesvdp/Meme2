@@ -44,10 +44,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func shareButtonPressed(sender: AnyObject) {
         let activityViewController = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: nil)
-        save()
+        
         activityViewController.completionWithItemsHandler = {
             (activity, success, item, error) in
-            self.performSegueWithIdentifier("restartApp", sender: nil)
+            if success {
+                self.save()
+                self.performSegueWithIdentifier("restartApp", sender: nil)
+            }
         }
     }
     
