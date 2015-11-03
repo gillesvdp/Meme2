@@ -13,6 +13,19 @@ class DetailsViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var detailsImage: UIImageView!
     var meme : Meme!
     
+    @IBAction func editButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("editMeme", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editMeme" {
+            let destinationVC = segue.destinationViewController as! MemeEditorViewController
+            destinationVC.memeToEdit = meme
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsImage.image = meme.finalImage

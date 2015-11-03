@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ef-Be-LgZ">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ef-Be-LgZ">
                                 <rect key="frame" x="0.0" y="507" width="600" height="44"/>
                                 <animations/>
                                 <items>
@@ -43,13 +43,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBt-CT-NTo" userLabel="bottomTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBt-CT-NTo" userLabel="bottomTextField">
                                 <rect key="frame" x="20" y="482" width="560" height="17"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yhT-g5-huZ" userLabel="memeEditorImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhT-g5-huZ" userLabel="memeEditorImage">
                                 <rect key="frame" x="0.0" y="114" width="600" height="343"/>
                                 <animations/>
                             </imageView>
@@ -278,10 +278,23 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="AH5-j6-wkp"/>
+                    <navigationItem key="navigationItem" id="AH5-j6-wkp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="p3w-rZ-P7g">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7RD-TR-Lh3">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="b81-BA-08L" eventType="touchUpInside" id="GNH-7t-smc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detailsImage" destination="icT-Z9-NcS" id="0Rc-BT-rKr"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="editMeme" id="znQ-x4-wXg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwJ-vs-2jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,6 +325,7 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="znQ-x4-wXg"/>
         <segue reference="ahh-QI-zcH"/>
     </inferredMetricsTieBreakers>
 </document>

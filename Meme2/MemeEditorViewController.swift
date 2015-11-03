@@ -146,18 +146,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewWillAppear(animated: Bool) {
         cameraButtonOutlet.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-            upTextField.defaultTextAttributes = memeTextAttributes
-            upTextField.textAlignment = .Center
-            upTextField.text = "TOP"
-            bottomTextField.defaultTextAttributes = memeTextAttributes
-            bottomTextField.textAlignment = .Center
-            bottomTextField.text = "BOTTOM"
-            shareButtonOutlet.enabled = false
         
         // If we receive a meme to be edited, replace default values
         if (memeToEdit != nil) {
@@ -165,7 +153,22 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             bottomTextField.text = memeToEdit.bottomText
             memeEditorImage.image = memeToEdit.originalImage
             shareButtonOutlet.enabled = true
+        } else {
+            upTextField.text = "TOP"
+            bottomTextField.text = "BOTTOM"
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+            upTextField.defaultTextAttributes = memeTextAttributes
+            upTextField.textAlignment = .Center
+            bottomTextField.defaultTextAttributes = memeTextAttributes
+            bottomTextField.textAlignment = .Center
+            shareButtonOutlet.enabled = false
+        
+        
     }
     
     override func viewWillDisappear(animated: Bool) {

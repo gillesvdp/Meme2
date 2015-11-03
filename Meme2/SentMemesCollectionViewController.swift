@@ -54,7 +54,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
             let destinationVC = segue.destinationViewController as! DetailsViewController
             let indexPath = collectionView?.indexPathsForSelectedItems()!
             let selectedRow = indexPath![0].row //Will show the first item selected only in the detail view controller.
-            destinationVC.meme = self.memes[selectedRow]
+            destinationVC.meme = memes[selectedRow]
         }
     }
 }
