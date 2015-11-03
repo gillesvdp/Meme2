@@ -60,7 +60,7 @@ class SentMemesTableViewController: UITableViewController {
             let destinationVC = segue.destinationViewController as! DetailsViewController
             let indexPath = tableView.indexPathForSelectedRow
             let selectedRow = indexPath!.row
-            destinationVC.meme = self.memes[selectedRow]
+            destinationVC.meme = memes[selectedRow]
         }
     }
 }
