@@ -42,6 +42,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func shareButtonPressed(sender: AnyObject) {
+        // Force the textFields to stop editing (otherwise a blue line in the text appears on the image)
+        upTextField.endEditing(true)
+        bottomTextField.endEditing(true)
+        
+        // Launch activity view controller
         let activityViewController = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: nil)
         
@@ -147,16 +152,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         cameraButtonOutlet.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
         
-        // If we receive a meme to be edited, replace default values
-        if (memeToEdit != nil) {
-            upTextField.text = memeToEdit.topText
-            bottomTextField.text = memeToEdit.bottomText
-            memeEditorImage.image = memeToEdit.originalImage
-            shareButtonOutlet.enabled = true
-        } else {
-            upTextField.text = "TOP"
-            bottomTextField.text = "BOTTOM"
-        }
+        
     }
     
     override func viewDidLoad() {
@@ -168,6 +164,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             bottomTextField.textAlignment = .Center
             shareButtonOutlet.enabled = false
         
+        // If we receive a meme to be edited, replace default values
+        if (memeToEdit != nil) {
+            upTextField.text = memeToEdit.topText
+            bottomTextField.text = memeToEdit.bottomText
+            memeEditorImage.image = memeToEdit.originalImage
+            shareButtonOutlet.enabled = true
+        } else {
+            upTextField.text = "TOP"
+            bottomTextField.text = "BOTTOM"
+        }
         
     }
     
