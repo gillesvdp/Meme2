@@ -263,18 +263,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icT-Z9-NcS">
-                                <rect key="frame" x="40" y="164" width="520" height="287"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="icT-Z9-NcS">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="icT-Z9-NcS" secondAttribute="trailing" constant="20" id="C4Z-kz-rcd"/>
-                            <constraint firstItem="icT-Z9-NcS" firstAttribute="leading" secondItem="sGi-4S-OCZ" secondAttribute="leadingMargin" constant="20" id="CBe-vh-TUp"/>
-                            <constraint firstItem="sST-Vh-qjj" firstAttribute="top" secondItem="icT-Z9-NcS" secondAttribute="bottom" constant="100" id="Nfh-JW-TIU"/>
-                            <constraint firstItem="icT-Z9-NcS" firstAttribute="top" secondItem="FSn-pD-zhN" secondAttribute="bottom" constant="100" id="ZEO-Ke-ydx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="icT-Z9-NcS" secondAttribute="trailing" constant="-20" id="C4Z-kz-rcd"/>
+                            <constraint firstItem="icT-Z9-NcS" firstAttribute="leading" secondItem="sGi-4S-OCZ" secondAttribute="leadingMargin" constant="-20" id="CBe-vh-TUp"/>
+                            <constraint firstItem="sST-Vh-qjj" firstAttribute="top" secondItem="icT-Z9-NcS" secondAttribute="bottom" id="Nfh-JW-TIU"/>
+                            <constraint firstItem="icT-Z9-NcS" firstAttribute="top" secondItem="FSn-pD-zhN" secondAttribute="bottom" id="ZEO-Ke-ydx"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
